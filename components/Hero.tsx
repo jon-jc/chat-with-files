@@ -1,19 +1,18 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/0tOBFuDbFfn
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { CommandIcon, FileIcon, FileSearch } from "lucide-react";
 import Upload from "./Upload";
+import { UserButton } from "@clerk/nextjs";
 
 export default function Component() {
   return (
     <>
+      <div>
+        <UserButton />
+      </div>
       <div className="bg-gray-50 py-12 lg:py-16 mt-28">
-        <div className="container px-4 md:px-6 mx-64">
+        <div className="container">
           <div className="grid gap-6 lg:grid-cols-2 xl:gap-12">
             <div className="flex flex-col justify-center items space-y-4">
               <div className="space-y-2">
@@ -25,9 +24,16 @@ export default function Component() {
                   of file management with FileMagic AI.
                 </p>
               </div>
+              <div className="flex flex-row items-center justify-center space-x-5">
+                <Link href="/chat">
+                  <Button size="lg">Chat</Button>
+                </Link>
+              </div>
               <Upload />
             </div>
-            <img alt="Image" height="338" src="/pdfReader.png" width="600" />
+            <div className="xl:rounded-md">
+              <img alt="Image" height="338" src="/pdfReader.png" width="600" />
+            </div>
           </div>
         </div>
       </div>
