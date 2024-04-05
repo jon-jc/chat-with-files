@@ -10,7 +10,7 @@ const page = () => {
         <Sidebar />
       </div>
 
-      <div className="max-h-full">
+      <div className="mx-auto w-full">
         <Chat />
       </div>
 

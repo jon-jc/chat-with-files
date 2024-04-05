@@ -27,7 +27,7 @@ export default function Sidebar() {
           <span className="sr-only">Toggle notifications</span>
         </Button>
       </div>
-      <div className="flex-1 overflow-auto py-2">
+      <div className="flex-1 overflow-hidden py-2">
         <div className="flex items-center gap-4 px-4">
           <Button className="h-8 w-8 rounded-full" size="icon" variant="ghost">
             <ArrowLeftIcon className="h-4 w-4" />

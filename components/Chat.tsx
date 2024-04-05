@@ -5,8 +5,17 @@
  */
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { FileIcon } from "lucide-react";
+import { CornerLeftDown, FileIcon, MicIcon, Paperclip } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  TooltipTrigger,
+  TooltipContent,
+  Tooltip,
+  TooltipProvider,
+} from "@/components/ui/tooltip";
 
 export default function Chat() {
   return (
@@ -26,11 +35,11 @@ export default function Chat() {
             <div className="rounded-xl bg-gray-100 flex-1 p-4 text-sm dark:bg-gray-800">
               Hi there! How can I assist you today?
             </div>
-            <img
+            <Image
               alt="User"
               className="rounded-full"
               height="40"
-              src="/placeholder.svg"
+              src="/pdfReader.png"
               style={{
                 aspectRatio: "40/40",
                 objectFit: "cover",
@@ -39,11 +48,11 @@ export default function Chat() {
             />
           </div>
           <div className="flex items-center gap-4">
-            <img
+            <Image
               alt="AI"
               className="rounded-full"
               height="40"
-              src="/placeholder.svg"
+              src="/pdfReader.png"
               style={{
                 aspectRatio: "40/40",
                 objectFit: "cover",
@@ -57,12 +66,41 @@ export default function Chat() {
             </div>
           </div>
         </div>
-        <form className="flex items-end gap-4">
-          <Input
-            className="flex-1 min-h-[40px]"
-            placeholder="Type a message..."
+        <form className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring">
+          <Label className="sr-only" htmlFor="message">
+            Message
+          </Label>
+          <Textarea
+            className="min-h-12 resize-none border-0 p-3 shadow-none focus-visible:ring-0"
+            id="message"
+            placeholder="Type your message here..."
           />
-          <Button type="submit">Send</Button>
+          <div className="flex items-center p-3 pt-0">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="icon" variant="ghost">
+                    <Paperclip className="size-4" />
+                    <span className="sr-only">Attach file</span>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="top">Attach File</TooltipContent>
+              </Tooltip>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button size="icon" variant="ghost">
+                    <MicIcon className="size-4" />
+                    <span className="sr-only">Use Microphone</span>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent side="top">Use Microphone</TooltipContent>
+              </Tooltip>
+              <Button className="ml-auto gap-1.5" size="sm" type="submit">
+                Send Message
+                <CornerLeftDown className="size-3.5" />
+              </Button>
+            </TooltipProvider>
+          </div>
         </form>
       </div>
     </div>
