@@ -16,8 +16,15 @@ import {
   Tooltip,
   TooltipProvider,
 } from "@/components/ui/tooltip";
+import { Message } from "ai";
+import ChatBubble from "./ui/chat-bubble";
 
 export default function Chat() {
+  const messages: Message[] = [
+    { role: "assistant", content: "Hello! How can I help you today?", id: "1" },
+    { role: "user", content: "I need help with my PDF file", id: "2" },
+  ];
+  const sources = ["I am sources 1", "source2", "source3", "source4"];
   return (
     <div className="flex flex-col h-screen w-full">
       <header className="border-b p-4 flex items-center gap-4">
@@ -32,8 +39,18 @@ export default function Chat() {
       <div className="flex-1 flex flex-col gap-4 p-4">
         <div className="grid gap-4">
           <div className="flex items-center gap-4">
-            <div className="rounded-xl bg-gray-100 flex-1 p-4 text-sm dark:bg-gray-800">
-              Hi there! How can I assist you today?
+            <div className="rounded-2xl border h-[75vh] flex flex-col justify-between w-full">
+              <div className="p-6 overflow-auto w">
+                {messages.map(({ id, role, content }: Message, index) => (
+                  <ChatBubble
+                    key={id}
+                    role={role}
+                    content={content}
+                    // Start from the third message of the assistant
+                    sources={role !== "assistant" ? [] : sources}
+                  />
+                ))}
+              </div>
             </div>
             <Image
               alt="User"
@@ -59,11 +76,6 @@ export default function Chat() {
               }}
               width="40"
             />
-            <div className="rounded-xl bg-gray-100 flex-1 p-4 text-sm dark:bg-gray-800">
-              I've found the information you're looking for. Here is the PDF
-              content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Curabitur euismod..."
-            </div>
           </div>
         </div>
         <form className="relative overflow-hidden rounded-lg border bg-background focus-within:ring-1 focus-within:ring-ring">
