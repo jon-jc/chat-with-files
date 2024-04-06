@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { CommandIcon, FileIcon, FileSearch } from "lucide-react";
 import Upload from "./Upload";
 import { UserButton } from "@clerk/nextjs";
+import Image from "next/image";
 
 export default function Component() {
   return (
@@ -32,7 +33,12 @@ export default function Component() {
               <Upload />
             </div>
             <div className="xl:rounded-md">
-              <img alt="Image" height="338" src="/pdfReader.png" width="600" />
+              <Image
+                alt="Image"
+                height="338"
+                src="/pdfReader.png"
+                width="600"
+              />
             </div>
           </div>
         </div>

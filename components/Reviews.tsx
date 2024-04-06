@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Reviews = () => {
@@ -12,7 +13,7 @@ const Reviews = () => {
               organization makes everything easy to find. Highly recommended!”
             </p>
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 alt="Avatar"
                 className="rounded-full"
                 height="40"
@@ -33,13 +34,13 @@ const Reviews = () => {
           </div>
           <div className="space-y-2">
             <p className="text-base text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              “As a busy professional, I don't have time to manually organize my
+              “As a busy professional, I dont have time to manually organize my
               files. FileMagic AI does it all for me. I simply drop my files,
-              and the AI takes care of the rest. It's like having a personal
+              and the AI takes care of the rest. Its like having a personal
               assistant for my files!”
             </p>
             <div className="flex items-center space-x-2">
-              <img
+              <Image
                 alt="Avatar"
                 className="rounded-full"
                 height="40"

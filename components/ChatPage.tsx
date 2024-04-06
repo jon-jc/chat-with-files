@@ -21,6 +21,7 @@ import {
   SearchIcon,
   UploadIcon,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Component() {
   return (
@@ -96,7 +97,7 @@ export default function Component() {
             </form>
           </div>
           <Button className="rounded-full" size="icon" variant="ghost">
-            <img
+            <Image
               alt="Avatar"
               className="rounded-full"
               height="32"

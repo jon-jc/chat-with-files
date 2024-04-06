@@ -22,7 +22,7 @@ const Upload = () => {
             <div className="grid gap-1.5">
               <Label htmlFor="file">File</Label>
               <div className="text-sm leading-none">pdf-sample.pdf</div>
-              <Button as="label" htmlFor="file" size="sm" variant="outline">
+              <Button size="sm" variant="outline">
                 Change
               </Button>
               <Input className="hidden" id="file" type="file" />
