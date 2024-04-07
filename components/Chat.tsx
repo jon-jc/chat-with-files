@@ -1,8 +1,5 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/AEFgoVUxuDR
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CornerLeftDown, FileIcon, MicIcon, Paperclip } from "lucide-react";
@@ -18,6 +15,7 @@ import {
 } from "@/components/ui/tooltip";
 import { Message } from "ai";
 import ChatBubble from "./ui/chat-bubble";
+import { DarkMode } from "./DarkMode";
 
 export default function Chat() {
   const messages: Message[] = [
@@ -36,6 +34,8 @@ export default function Chat() {
         </Link>
         <Button size="sm">Upgrade</Button>
       </header>
+      <DarkMode />
+
       <div className="flex-1 flex flex-col gap-4 p-4">
         <div className="grid gap-4">
           <div className="flex items-center gap-4">

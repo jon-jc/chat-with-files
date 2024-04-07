@@ -5,12 +5,14 @@ import { CommandIcon, FileIcon, FileSearch } from "lucide-react";
 import Upload from "./Upload";
 import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
+import { DarkMode } from "./DarkMode";
 
 export default function Component() {
   return (
     <>
-      <div>
+      <div className="flex flex-row justify-between mx-20 py-2">
         <UserButton />
+        <DarkMode />
       </div>
       <div className="bg-gray-50 py-12 lg:py-16 mt-28">
         <div className="container">

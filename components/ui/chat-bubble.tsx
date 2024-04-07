@@ -18,6 +18,7 @@ import {
 } from "./card";
 
 import { formattedText } from "@/lib/utils";
+import Image from "next/image";
 
 const convertNewLines = (text: string) =>
   text.split("\n").map((line, i) => (
@@ -45,11 +46,18 @@ export function ChatBubble({
     <div>
       <Card className="mb-2">
         <CardHeader>
+          <Image
+            className="rounded-full"
+            src="/pdfReader.png"
+            width={30}
+            height={30}
+            alt=""
+          />
           <CardTitle
             className={
               role === "assistant"
-                ? "rounded-xl bg-slate-100"
-                : "rounded-xl bg-slate-100"
+                ? "rounded-xl  bg-slate-100"
+                : "rounded-xl  bg-slate-100"
             }
           >
             {role === "assistant" ? "Assistant" : "User"}
